@@ -3,10 +3,15 @@ Challenge 12
 
 Purpose: 
 
+This is a comand-line application for a business owner to 
+be able to view and manage the departments, roles, and their employees within their company. Helping them to organize and plan for their business.
 
 
 Built with:
 
+* Visual Studio Code 
+* SQL
+ 
 
 
 Website:
