@@ -1,6 +1,4 @@
-// this is where I will copy and paste boiler plate code (find in module work) whatever is in connection.js
 // add my sql info
-
 const mysql = require('mysql2');
 
 const conn = mysql.createConnection({
