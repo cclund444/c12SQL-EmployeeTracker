@@ -1,0 +1,26 @@
+{
+  "name": "c12SQL-EmployeeTracker",
+  "version": "1.0.0",
+  "description": "Challenge 12",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cclund444/c12SQL-EmployeeTracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cclund444/c12SQL-EmployeeTracker/issues"
+  },
+  "homepage": "https://github.com/cclund444/c12SQL-EmployeeTracker#readme",
+  "dependencies": {
+    "asciiart-logo": "^0.2.6",
+    "console.table": "^0.10.0",
+    "inquirer": "^8.2.0",
+    "mysql2": "^2.3.2"
+  }
+}
