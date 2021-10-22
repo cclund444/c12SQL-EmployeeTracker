@@ -11,12 +11,18 @@ Built with:
 
 * Visual Studio Code 
 * SQL
- 
+* schema.sql
+* index.js
+* package.json
+* connection.js 
 
 
 Website:
 
+*Video walkthrough:
 
+
+*GitHub link:
 https://github.com/cclund444/c12SQL-EmployeeTracker
 
 Contibution:
