@@ -1,12 +1,73 @@
 // make functions that will run sql querries (still write out code)
+const inquirer = require("inquirer")
 const conn = require ("./connection")
 class DB {
     constructor (conn) {
         this.connection = conn
     }
+
 // write out functions-one for each interaction with data base
+
+function startPrompt() {
+    inquirer.promise([
+        {
+            type: "list".
+            message: "What would you like to do?",
+            name: "choice",
+            choices: [
+                "Add Department?",
+                "Add Role?",
+                "Add Employee?",
+                "Update Employee?",
+                "Update Role?",
+                "Update Department?",
+                "View All Employees By Department?",
+                "View All Employees By Role?",
+                "View All Employees?",
+            ]
+        }
+    ]).then(function(val) {
+        switch (val.choice) {
+            case "Add Department?":
+                addDepartment();
+            break;
+
+            case "Add Role?":
+                addRoles();
+            break;
+
+            case "Add Employee?":
+                addEmployees();
+            break;
+
+            case "Update Department?":
+                updateDepartment();
+            break;
+
+            case "Update Role?":
+                updateRole();
+            break;
+
+            case "Update Employee?":
+                updatdEmployee();
+            break;
+
+            case "View All Employees By Department??":
+                viewAllDepartments();
+            break;
+
+            case "View All Employees By Role??":
+                viewAllRoles();
+            break;
+
+            case "View All Employees??":
+                viewAllEmployees();
+            break;
+        }
+    })
+}
+
 // find all, create all, update .....
-// the endgame is to make easier (db.*above directions*)
 
     findAllEmp() {
         return this.connection.promise().query(
@@ -38,5 +99,7 @@ class DB {
         )
     }
 }
+
+// the endgame is to make easier (db.*above directions*)
 
 module.exports = new DB(connection)
