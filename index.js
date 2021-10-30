@@ -7,6 +7,7 @@
 const db = require('./db')
 const inquirer = require('inquirer');
 const { createEmp } = require('./db');
+const { eventNames } = require('./db/connection');
 
 
 function startPrompt() {
@@ -45,8 +46,31 @@ function startPrompt() {
                 break;
 
             case "Add Role?":
-                addRoles();
-                break;
+                inquirer
+                    .prompt([
+
+                        {
+                            type: "input",
+                            name: "ID",
+                            message: "What is your job title-ID?",
+                        },
+
+                        {
+                            type: "input",
+                            name: "amount",
+                            message: "What is your salary within your role of that department?",
+                        },
+
+                        {
+                            type: "choice",
+                            name: "department",
+                            message: "Select the department you're in?",
+                        },
+
+                    ]).then (ans => {
+                        db.createRol(ans.createRol)
+                    })
+                    break;
 
             case "Add Employee?":
                 inquirer

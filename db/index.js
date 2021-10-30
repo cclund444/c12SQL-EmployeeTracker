@@ -36,9 +36,9 @@ class DB {
         )
     }
 
-    createRol() {
+    createRol(roleId) {
         return this.connection.promise().query(
-            'SELECT '
+            "INSERT INTO role (ID, amount, departmentId) VALUES (?, ?, ?)", ID, amount, department 
         )
     }
 }
