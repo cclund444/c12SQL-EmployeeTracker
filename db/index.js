@@ -9,65 +9,6 @@ class DB {
 
 // write out functions-one for each interaction with data base
 
-function startPrompt() {
-    inquirer.promise([
-        {
-            type: "list",
-            message: "What would you like to do?",
-            name: "choice",
-            choices: [
-                "Add Department?",
-                "Add Role?",
-                "Add Employee?",
-                "Update Employee?",
-                "Update Role?",
-                "Update Department?",
-                "View All Employees By Department?",
-                "View All Employees By Role?",
-                "View All Employees?",
-            ]
-        }
-    ]).then(function(val) {
-        switch (val.choice) {
-            case "Add Department?":
-                addDepartment();
-            break;
-
-            case "Add Role?":
-                addRoles();
-            break;
-
-            case "Add Employee?":
-                addEmployees();
-            break;
-
-            case "Update Department?":
-                updateDepartment();
-            break;
-
-            case "Update Role?":
-                updateRole();
-            break;
-
-            case "Update Employee?":
-                updatdEmployee();
-            break;
-
-            case "View All Employees By Department??":
-                viewAllDepartments();
-            break;
-
-            case "View All Employees By Role??":
-                viewAllRoles();
-            break;
-
-            case "View All Employees??":
-                viewAllEmployees();
-            break;
-        }
-    })
-}
-
 // find all, create all, update .....
 
     findAllEmp() {
@@ -76,9 +17,10 @@ function startPrompt() {
         )
     }
 
-    createEmp() {
-        return this.connection.promise().query(
-            'SELECT '
+    createEmp(data) {
+        const role-id
+        return this.connection.promise(first, last, role, boss).query(
+            "INSERT INTO employee (firstName, lastName, roleId, managerId) VALUES (?, ?, ?, ?)", first, last, role, boss
         )
     }
 
@@ -88,9 +30,9 @@ function startPrompt() {
         )
     }
 
-    createDep() {
+    createDep(dept) {
         return this.connection.promise().query(
-            'SELECT '
+            "INSERT INTO department (name) VALUES (?)", dept
         )
     }
 
