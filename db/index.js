@@ -1,6 +1,7 @@
 // make functions that will run sql querries (still write out code)
 const inquirer = require("inquirer")
 const conn = require ("./connection")
+
 class DB {
     constructor (conn) {
         this.connection = conn
@@ -11,7 +12,7 @@ class DB {
 function startPrompt() {
     inquirer.promise([
         {
-            type: "list".
+            type: "list",
             message: "What would you like to do?",
             name: "choice",
             choices: [
@@ -99,6 +100,7 @@ function startPrompt() {
         )
     }
 }
+
 
 // the endgame is to make easier (db.*above directions*)
 
