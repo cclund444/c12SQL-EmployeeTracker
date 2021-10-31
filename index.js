@@ -46,29 +46,41 @@ function startPrompt() {
                 break;
 
             case "Add Role?":
+                    const depts = db.connection.query(
+                        'SELECT * FROM department'
+                        // should look like [{id: 1, name:'Accounting'},  {}, {}]
+                        // inquirer wants [{name: Accounting, value: 1}]
+                    )
+                    const options = depts.map(dep => {
+                        return {
+                            name: dep.name,
+                            value: dep.id
+                        }
+                    })
                 inquirer
                     .prompt([
 
                         {
                             type: "input",
-                            name: "ID",
-                            message: "What is your job title-ID?",
+                            name: "title",
+                            message: "What is your job title-ID?"
                         },
-
+                        
                         {
                             type: "input",
-                            name: "amount",
+                            name: "salary",
                             message: "What is your salary within your role of that department?",
                         },
 
                         {
-                            type: "choice",
+                            type: "list",
                             name: "department",
                             message: "Select the department you're in?",
+                            choices: options
                         },
 
                     ]).then (ans => {
-                        db.createRol(ans.createRol)
+                        db.createRol(ans)
                     })
                     break;
 

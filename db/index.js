@@ -25,8 +25,8 @@ class DB {
     }
 
     updateEmp() {
-        return this.connection.promise().query(
-            'SELECT '
+        return this.connection.promise(first, last, role, boss).query(
+            'SELECT employee '
         )
     }
 
@@ -36,9 +36,10 @@ class DB {
         )
     }
 
-    createRol(roleId) {
+    createRol(data) {
+        // {title: 'dancer', salary: 10, department: 1}
         return this.connection.promise().query(
-            "INSERT INTO role (ID, amount, departmentId) VALUES (?, ?, ?)", ID, amount, department 
+            "INSERT INTO role (title, salary, departmentId) VALUES (?, ?, ?)", data.title, data.salary, data.department
         )
     }
 }

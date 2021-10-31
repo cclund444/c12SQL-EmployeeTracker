@@ -2,8 +2,10 @@
 INSERT INTO department (name)
 VALUES
 
-INSERT INTO roleId (ID, amount, departmentId)
+INSERT INTO role (title, salary, departmentId)
 VALUES
 
-INSERT INTO employees (firstName, lastName, roleId, managerId)
+INSERT INTO employee (firstName, lastName, roleId, managerId)
 VALUES
+
+-- make up or find file with premade values
