@@ -9,7 +9,7 @@ const inquirer = require('inquirer');
 const { createEmp } = require('./db');
 const { eventNames } = require('./db/connection');
 
-
+// add prompts
 function startPrompt() {
     inquirer.promise([
         {
@@ -143,57 +143,8 @@ function startPrompt() {
         }
     })
 }
-// Add Prompts
-// Department
-inquirer
-    .prompt([
-
-        {
-            type: "input",
-            name: "title",
-            message: "What is the name of your department?",
-        },
-
-    ])
-
-// Role
-inquirer
-    .prompt([
-
-        {
-            type: "input",
-            name: "title",
-            message: "What is your job title?",
-        },
-
-        {
-            type: "input",
-            name: "amount",
-            message: "What is your salary within your role of that department?",
-        },
-
-        {
-            type: "input",
-            name: "department",
-            message: "What is the name of the department you're in?",
-        },
-
-    ])
-
-// Employee
-
-
-// Update Prompts 
-
-
-
-
 
 // View All Prompts
-
-
-
-
 
 // Next Step Prompts
 
